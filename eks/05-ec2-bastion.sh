@@ -1,9 +1,7 @@
 #!/bin/bash
 yum update -y
-timedatectl set-timezone "Asia/Tokyo"
-localectl set-locale LANG=ja_JP.UTF-8          
-touch /home/ec2-user/.hushlogin
-chown ec2-user:ec2-user /home/ec2-user/.hushlogin
+timedatectl set-timezone "Asia/Shanghai"
+
 
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "/tmp/awscliv2.zip"
 unzip /tmp/awscliv2.zip  -d /tmp/awscliv2/
@@ -20,3 +18,6 @@ sudo mv /tmp/eksctl /usr/local/bin
 curl -sL https://rpm.nodesource.com/setup_16.x | bash -
 yum install -y gcc-c++ make
 yum install -y nodejs
+
+
+# aws eks --region us-east-1 update-kubeconfig --name terraform-eks --profile default
