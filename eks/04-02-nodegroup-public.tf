@@ -15,7 +15,7 @@ resource "aws_eks_node_group" "nk_eks_nodegroup_public" {
   ami_type       = "AL2_x86_64"
   capacity_type  = "ON_DEMAND"
   disk_size      = 20
-  instance_types = ["t3.micro"]
+  instance_types = ["c7i-flex.large"]
 
   remote_access {
     ec2_ssh_key = "nk_key"

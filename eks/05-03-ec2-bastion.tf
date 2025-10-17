@@ -24,7 +24,7 @@ resource "aws_instance" "bastion" {
   subnet_id              = module.nk-eks-vpc.public_subnets[0]
   vpc_security_group_ids = [module.eks_bastion_host_sg.security_group_id]
   iam_instance_profile   = aws_iam_instance_profile.eks_bastion_host_profile.name
-  user_data              = file("${path.module}/05-ec2-bastion.sh")
+  user_data              = file("${path.module}/05-03-ec2-bastion.sh")
   tags = {
     Name = "Nk-EKS-BastionHost"
   }
